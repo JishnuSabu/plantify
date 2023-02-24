@@ -19,16 +19,18 @@ class _AddAddressState extends State<AddAddress> {
           Padding(
             padding: const EdgeInsets.all(18.0),
             child: Container(
-              decoration: BoxDecoration(color: Colors.grey[300],borderRadius: BorderRadius.circular(6)),
+              decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(6)),
               height: 50,
               width: double.infinity,
               child: const Padding(
                 padding: EdgeInsets.only(left: 14.0),
                 child: TextField(
                   decoration: InputDecoration(
-                    hintText: "Name",
-                    disabledBorder: InputBorder.none,border:InputBorder.none
-                  ),
+                      hintText: "Name",
+                      disabledBorder: InputBorder.none,
+                      border: InputBorder.none),
                 ),
               ),
             ),
@@ -36,7 +38,9 @@ class _AddAddressState extends State<AddAddress> {
           Padding(
             padding: const EdgeInsets.all(18.0),
             child: Container(
-              decoration: BoxDecoration(color: Colors.grey[300],borderRadius: BorderRadius.circular(6)),
+              decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(6)),
               height: 50,
               width: double.infinity,
               child: const Padding(
@@ -44,45 +48,57 @@ class _AddAddressState extends State<AddAddress> {
                 child: TextField(
                   decoration: InputDecoration(
                       hintText: "Phone Number",
-                      disabledBorder: InputBorder.none,border:InputBorder.none
-                  ),
+                      disabledBorder: InputBorder.none,
+                      border: InputBorder.none),
                 ),
               ),
             ),
           ),
-          Divider(thickness: 9,color: Colors.grey[300],),
+          Divider(
+            thickness: 9,
+            color: Colors.grey[300],
+          ),
           const Text("Contact Info"),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [ Container(
-              decoration: BoxDecoration(color: Colors.grey[300],borderRadius: BorderRadius.circular(6)),
-              height: 50,
-              width:170,
-              child: const Padding(
-                padding: EdgeInsets.only(left: 14.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                      hintText: "Phone Number",
-                      disabledBorder: InputBorder.none,border:InputBorder.none
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(6)),
+                height: 50,
+                width: 170,
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 14.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        hintText: "Phone Number",
+                        disabledBorder: InputBorder.none,
+                        border: InputBorder.none),
                   ),
                 ),
               ),
-            ),
-            Container(
-              decoration: BoxDecoration(color: Colors.grey[300],borderRadius: BorderRadius.circular(6)),
-              height: 50,
-              width:170,
-              child: const Padding(
-                padding: EdgeInsets.only(left: 14.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                      hintText: "Phone Number",
-                      disabledBorder: InputBorder.none,border:InputBorder.none
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(6)),
+                height: 50,
+                width: 170,
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 14.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        hintText: "Phone Number",
+                        disabledBorder: InputBorder.none,
+                        border: InputBorder.none),
                   ),
                 ),
               ),
-            ),],)
+            ],
+          )
         ]),
       ),
     );
