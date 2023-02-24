@@ -15,7 +15,8 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   late SharedPreferences quantitydata;
-  @override
+
+@override
   Widget build(BuildContext context) {
     final plantimage = ModalRoute.of(context)?.settings.arguments;
     final Plants = dummyplantdetails
