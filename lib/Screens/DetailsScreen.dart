@@ -16,7 +16,7 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   late SharedPreferences quantitydata;
 
-@override
+  @override
   Widget build(BuildContext context) {
     final plantimage = ModalRoute.of(context)?.settings.arguments;
     final Plants = dummyplantdetails
@@ -47,56 +47,56 @@ class _DetailScreenState extends State<DetailScreen> {
         ),
         body: SingleChildScrollView(
             child: Column(children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 38.0, right: 38, top: 20),
-            child: Container(
-              height: 270,
-              width: double.infinity,
-              decoration:
+              Padding(
+                padding: const EdgeInsets.only(left: 38.0, right: 38, top: 20),
+                child: Container(
+                  height: 270,
+                  width: double.infinity,
+                  decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(14)),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(14),
-                child: Image(
-                    fit: BoxFit.fill,
-                    image: AssetImage("${Plants["plantimage"]}")),
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                "${Plants["plantname"]}",
-                style:
-                    const TextStyle(fontWeight: FontWeight.w700, fontSize: 32),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(14),
+                    child: Image(
+                        fit: BoxFit.fill,
+                        image: AssetImage("${Plants["plantimage"]}")),
+                  ),
+                ),
               ),
               const SizedBox(
-                width: 140,
+                height: 15,
               ),
-              Text(
-                "${Plants["plantprice"]}",
-                style: const TextStyle(
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    "${Plants["plantname"]}",
+                    style:
+                    const TextStyle(fontWeight: FontWeight.w700, fontSize: 32),
+                  ),
+                  const SizedBox(
+                    width: 140,
+                  ),
+                  Text(
+                    "${Plants["plantprice"]}",
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 29,
+                        color: Color(0Xff0c9869)),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 289.0),
+                child: Text(
+                  "${Plants["place"]}",
+                  style: const TextStyle(
                     fontWeight: FontWeight.w700,
-                    fontSize: 29,
-                    color: Color(0Xff0c9869)),
+                    fontSize: 20,
+                    color: Color(0Xff0c9869),
+                  ),
+                ),
               ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 289.0),
-            child: Text(
-              "${Plants["place"]}",
-              style: const TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 20,
-                color: Color(0Xff0c9869),
-              ),
-            ),
-          ),
               Divider(thickness: 9,color: Colors.grey[300],),
               SizedBox(height: 10,),
               Row(
@@ -118,44 +118,44 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
               SizedBox(height: 11,),
               Divider(thickness: 9,color: Colors.grey[300],),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: RatingBar.builder(
-                  initialRating: 3,
-                  minRating: 1,
-                  direction: Axis.horizontal,
-                  allowHalfRating: true,
-                  itemCount: 5,
-                  itemBuilder: (context, _) => const Icon(
-                    Icons.star,
-                    size: 4,
-                    color: Colors.amber,
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RatingBar.builder(
+                      initialRating: 3,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      itemCount: 5,
+                      itemBuilder: (context, _) => const Icon(
+                        Icons.star,
+                        size: 4,
+                        color: Colors.amber,
+                      ),
+                      onRatingUpdate: (rating) {
+                        print(rating);
+                      },
+                    ),
                   ),
-                  onRatingUpdate: (rating) {
-                    print(rating);
-                  },
+                  Text("${Plants["Rating"]}",style: TextStyle(color: Colors.blue),)
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.only(right: 278.0),
+                child: Text(
+                  "Description",
+                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                 ),
               ),
-              Text("${Plants["Rating"]}",style: TextStyle(color: Colors.blue),)
-            ],
-          ),
-          const Padding(
-            padding: EdgeInsets.only(right: 278.0),
-            child: Text(
-              "Description",
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Text(
-              "${Plants["Description"]}",
-              style: TextStyle(fontSize: 16),
-              textAlign: TextAlign.justify,
-            ),
-          ),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Text(
+                  "${Plants["Description"]}",
+                  style: TextStyle(fontSize: 16),
+                  textAlign: TextAlign.justify,
+                ),
+              ),
               SizedBox(height: 6,),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -173,13 +173,13 @@ class _DetailScreenState extends State<DetailScreen> {
                         ));
                   },
                   child: const Padding(
-                    padding: EdgeInsets.only(
-                        left: 30.0, right: 30, top: 10, bottom: 10),
-                    child: Text(
-                      "Buy Now",
-                      style: TextStyle(fontSize: 18, color: Colors.white),
-                    ))),
-        ])));
+                      padding: EdgeInsets.only(
+                          left: 30.0, right: 30, top: 10, bottom: 10),
+                      child: Text(
+                        "Buy Now",
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ))),
+            ])));
   }
 }
 

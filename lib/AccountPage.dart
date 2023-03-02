@@ -136,7 +136,7 @@ class _AccountPageState extends State<AccountPage> {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MyLoginPage(),
+                        builder: (context) => LoginPage(),
                       ));
                 },
                 child: const Padding(

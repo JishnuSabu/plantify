@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plantify/BookingPage.dart';
+import 'package:plantify/plantdetails.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AddAddress extends StatefulWidget {
@@ -287,10 +288,7 @@ class _AddAddressState extends State<AddAddress> {
       Addressdata.setString('City', city);
       Addressdata.setString('District', district);
       Addressdata.setString('State', state);
-      Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => Booking(),
-          ));
+      Navigator.of(context)
+          .pushNamed("NewBookingPage", arguments: dummyplantdetails);
   }}
 }

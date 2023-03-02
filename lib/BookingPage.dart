@@ -3,6 +3,7 @@ import 'package:plantify/Add%20Address%20Page.dart';
 import 'package:plantify/Screens/DetailsScreen.dart';
 import 'package:plantify/SuccessfulOrderPage.dart';
 import 'package:plantify/main.dart';
+import 'package:plantify/plantdetails.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Booking extends StatefulWidget {
@@ -40,12 +41,19 @@ class _BookingState extends State<Booking> {
 
   @override
   Widget build(BuildContext context) {
+    // final iterableMap = dummyplantdetails.whereType<Map>().first;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: const Color(0Xff0c9869),
         leading: GestureDetector(
-            onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(),));},
+            onTap: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(),
+                  ));
+            },
             child: const Icon(Icons.arrow_back)),
         title: const Text("Order Confirmation"),
       ),
@@ -175,13 +183,13 @@ class _BookingState extends State<Booking> {
             const SizedBox(
               height: 10,
             ),
-            DividerCustom(),
+            const DividerCustom(),
             Padding(
-              padding: const EdgeInsets.only(top: 6.0),
+              padding:EdgeInsets.only(top: 6.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  Text(
+                children: [
+                  const Text(
                     "Amount Payable",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
@@ -189,13 +197,14 @@ class _BookingState extends State<Booking> {
                     width: 170,
                   ),
                   Text(
-                    "\$500",
+                    // iterableMap["plantprice"],
+                    "500",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   )
                 ],
               ),
             ),
-            DividerCustom(),
+            const DividerCustom(),
             const Padding(
               padding: EdgeInsets.only(right: 270.0),
               child: Text(
@@ -262,7 +271,7 @@ class _BookingState extends State<Booking> {
                 ),
               ],
             ),
-            DividerCustom(),
+            const DividerCustom(),
             const Padding(
               padding: EdgeInsets.only(right: 270.0, top: 6),
               child: Text(
@@ -270,7 +279,7 @@ class _BookingState extends State<Booking> {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
             ),
-            DividerCustom(),
+            const DividerCustom(),
             const SizedBox(
               height: 20,
             ),
@@ -278,7 +287,7 @@ class _BookingState extends State<Booking> {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4)),
-                  primary:  Color(0Xff0c9869),
+                  primary: const Color(0Xff0c9869),
                 ),
                 onPressed: () {
                   Navigator.pushReplacement(
