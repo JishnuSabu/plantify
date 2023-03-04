@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:plantify/BookingPage.dart';
+import 'package:plantify/Ouantity%20selection.dart';
 import 'package:plantify/Screens/HomeScreen.dart';
 import 'package:plantify/plantdetails.dart';
 
@@ -14,7 +15,7 @@ class _FeaturedDetailScreenState extends State<FeaturedDetailScreen> {
   @override
   Widget build(BuildContext context) {
     final plantimage = ModalRoute.of(context)?.settings.arguments;
-    final FeaturedPlants = dummyfeaturedplantdetails
+    final FeaturedPlants = dummyMorefeaturedplantdetails
         .firstWhere((data) => data["plantimage"] == plantimage);
     return Scaffold(
         appBar: AppBar(
@@ -77,7 +78,7 @@ class _FeaturedDetailScreenState extends State<FeaturedDetailScreen> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               Row(
@@ -131,7 +132,7 @@ class _FeaturedDetailScreenState extends State<FeaturedDetailScreen> {
                       },
                     ),
                   ),
-                  Text("${FeaturedPlants["Rating"]}",style: TextStyle(color: Colors.blue),)
+                  Text("${FeaturedPlants["Rating"]}",style: const TextStyle(color: Colors.blue),)
                 ],
               ),
               const Padding(
@@ -145,15 +146,17 @@ class _FeaturedDetailScreenState extends State<FeaturedDetailScreen> {
                 padding: const EdgeInsets.all(12.0),
                 child: Text(
                   "${FeaturedPlants["Description"]}",
-                  style: TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: 16),
                   textAlign: TextAlign.justify,
                 ),
               ),
+              const DropdownButtonExample(),
+              const SizedBox(height: 6,),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16)),
-                    primary:Color(0Xff0c9869),
+                    primary:const Color(0Xff0c9869),
                   ),
                   onPressed: () {
                     Navigator.pushReplacement(

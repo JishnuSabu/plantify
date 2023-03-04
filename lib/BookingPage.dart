@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plantify/Add%20Address%20Page.dart';
 import 'package:plantify/Screens/DetailsScreen.dart';
+import 'package:plantify/Screens/HomeScreen.dart';
 import 'package:plantify/SuccessfulOrderPage.dart';
 import 'package:plantify/main.dart';
 import 'package:plantify/plantdetails.dart';
@@ -41,17 +42,17 @@ class _BookingState extends State<Booking> {
 
   @override
   Widget build(BuildContext context) {
-    // final iterableMap = dummyplantdetails.whereType<Map>().first;
+    final plants = dummyplantdetails.whereType<Map>().first;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: const Color(0Xff0c9869),
         leading: GestureDetector(
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => DetailScreen(),
+                    builder: (context) => HomeScreens(),
                   ));
             },
             child: const Icon(Icons.arrow_back)),
@@ -185,11 +186,11 @@ class _BookingState extends State<Booking> {
             ),
             const DividerCustom(),
             Padding(
-              padding:EdgeInsets.only(top: 6.0),
+              padding: EdgeInsets.only(top: 6.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const Text(
+                  Text(
                     "Amount Payable",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
@@ -197,10 +198,19 @@ class _BookingState extends State<Booking> {
                     width: 170,
                   ),
                   Text(
-                    // iterableMap["plantprice"],
-                    "500",
+                    "${plants["plantprice"]}",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                  )
+                  ),
+                  // dummyplantdetails.map((ex)=>Text("${ex["plantprice"]}")).toList()
+                  SizedBox(
+                    height: 30,
+                    width: 50,
+                    child: ListView(
+                        padding: EdgeInsets.all(14),
+                        children: dummyplantdetails.map((ex) {
+                          return Text("${ex["plantprice"]}");
+                        }).toList()),
+                  ),
                 ],
               ),
             ),
@@ -225,7 +235,7 @@ class _BookingState extends State<Booking> {
                       style: TextStyle(fontSize: 18, color: Colors.black),
                     ),
                     SizedBox(
-                      width: 262,
+                      width: 254,
                     ),
                     Text(
                       "\$500",

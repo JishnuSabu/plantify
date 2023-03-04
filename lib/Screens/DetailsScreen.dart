@@ -19,7 +19,7 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     final plantimage = ModalRoute.of(context)?.settings.arguments;
-    final Plants = dummyplantdetails
+    final Plants = dummyMoreRecommendePlantdetails
         .firstWhere((data) => data["plantimage"] == plantimage);
     return Scaffold(
         appBar: AppBar(
@@ -98,7 +98,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 ),
               ),
               Divider(thickness: 9,color: Colors.grey[300],),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
@@ -116,7 +116,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 11,),
+              const SizedBox(height: 11,),
               Divider(thickness: 9,color: Colors.grey[300],),
               Row(
                 children: [
@@ -138,7 +138,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       },
                     ),
                   ),
-                  Text("${Plants["Rating"]}",style: TextStyle(color: Colors.blue),)
+                  Text("${Plants["Rating"]}",style: const TextStyle(color: Colors.blue),)
                 ],
               ),
               const Padding(
@@ -152,16 +152,17 @@ class _DetailScreenState extends State<DetailScreen> {
                 padding: const EdgeInsets.all(12.0),
                 child: Text(
                   "${Plants["Description"]}",
-                  style: TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: 16),
                   textAlign: TextAlign.justify,
                 ),
               ),
-              SizedBox(height: 6,),
+              const DropdownButtonExample(),
+              const SizedBox(height: 6,),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16)),
-                    primary:Color(0Xff0c9869),
+                    primary:const Color(0Xff0c9869),
                   ),
                   onPressed: () async {
                     quantitydata = await SharedPreferences.getInstance();

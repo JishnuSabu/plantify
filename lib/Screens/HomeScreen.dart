@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:plantify/MoreItemsScreen/moreFeaturedScreen.dart';
+import 'package:plantify/MoreItemsScreen/moreRecommendedScreen.dart';
 import 'package:plantify/Screens/DetailsScreen.dart';
 import 'package:plantify/Screens/FeaturedDetailsScreen.dart';
 import 'package:plantify/plantdetails.dart';
@@ -126,7 +128,7 @@ class _HomeScreensState extends State<HomeScreens> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const Text(
-                "Recomended",
+                "Recommended",
                 style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
@@ -139,7 +141,7 @@ class _HomeScreensState extends State<HomeScreens> {
                         backgroundColor: const Color(0Xff0c9869),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12))),
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => moreRecommended(),));},
                     child: const Text(
                       "More",
                       style: TextStyle(
@@ -169,7 +171,7 @@ class _HomeScreensState extends State<HomeScreens> {
                         backgroundColor: const Color(0Xff0c9869),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12))),
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => MoreFeatured(),));},
                     child: const Text(
                       "More",
                       style: TextStyle(

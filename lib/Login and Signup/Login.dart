@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:plantify/Registeration.dart';
+import 'package:plantify/BookingPage.dart';
+import 'package:plantify/Login%20and%20Signup/Registeration.dart';
+import 'package:plantify/MoreItemsScreen/moreRecommendedScreen.dart';
 import 'package:plantify/Screens/DetailsScreen.dart';
 import 'package:plantify/Screens/FeaturedDetailsScreen.dart';
 import 'package:plantify/main.dart';
@@ -20,6 +22,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "NewDetailsScreen": (context) => DetailScreen(),
         "NewFeaturedDetailsScreen": (context) => FeaturedDetailScreen(),
+        "NewBookingPage": (context) => Booking(),
+        "NewMoreRecommendedPage": (context) => moreRecommended(),
       },
     );
   }
