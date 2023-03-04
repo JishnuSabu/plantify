@@ -15,12 +15,14 @@ class HomeScreens extends StatefulWidget {
 class _HomeScreensState extends State<HomeScreens> {
   late SharedPreferences logindata;
   String? username;
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     initial();
   }
+
   void initial() async {
     logindata = await SharedPreferences.getInstance();
     setState(() {
@@ -33,8 +35,14 @@ class _HomeScreensState extends State<HomeScreens> {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(Icons.menu),
+        title: const Text(
+          "Plantify",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
         backgroundColor: const Color(0Xff0c9869),
         elevation: 0,
+        actions: [const Icon(Icons.notifications)],
       ),
       body: SingleChildScrollView(
           child: Column(
@@ -76,6 +84,7 @@ class _HomeScreensState extends State<HomeScreens> {
                           padding: const EdgeInsets.only(left: 28.0, top: 3),
                           child: TextField(
                               decoration: InputDecoration(
+                            focusedBorder: InputBorder.none,
                             hintStyle: TextStyle(
                                 color: Colors.green[200], fontSize: 20),
                             hintText: "Search",
@@ -91,25 +100,32 @@ class _HomeScreensState extends State<HomeScreens> {
           CarouselSlider(
             items: [
               Container(
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-                    image:
-                    const DecorationImage(fit: BoxFit.fill,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: const DecorationImage(
+                        fit: BoxFit.fill,
                         image: AssetImage("assets/Images/o.webp"))),
               ),
               Container(
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-                    image:
-                    const DecorationImage(fit: BoxFit.fill,image: AssetImage("assets/Images/indoor plants.png"))),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: const DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage("assets/Images/indoor plants.png"))),
               ),
               Container(
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-                    image:
-                    const DecorationImage(fit: BoxFit.fill,image: AssetImage("assets/Images/home plants.webp"))),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: const DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage("assets/Images/home plants.webp"))),
               ),
               Container(
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-                    image:
-                    const DecorationImage(fit: BoxFit.fill,image: AssetImage("assets/Images/offer.jpg"))),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: const DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage("assets/Images/offer.jpg"))),
               ),
             ],
             options: CarouselOptions(
@@ -117,13 +133,14 @@ class _HomeScreensState extends State<HomeScreens> {
                 viewportFraction: .5,
                 height: 200,
                 enlargeCenterPage: true,
-                aspectRatio: 16/9,
+                aspectRatio: 16 / 9,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                enableInfiniteScroll: true
-            ),
+                enableInfiniteScroll: true),
           ),
-          SizedBox(height: 17,),
+          const SizedBox(
+            height: 17,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -141,7 +158,13 @@ class _HomeScreensState extends State<HomeScreens> {
                         backgroundColor: const Color(0Xff0c9869),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12))),
-                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => moreRecommended(),));},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => moreRecommended(),
+                          ));
+                    },
                     child: const Text(
                       "More",
                       style: TextStyle(
@@ -153,7 +176,9 @@ class _HomeScreensState extends State<HomeScreens> {
             ],
           ),
           RecomendedPlants(),
-          const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -171,7 +196,13 @@ class _HomeScreensState extends State<HomeScreens> {
                         backgroundColor: const Color(0Xff0c9869),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12))),
-                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => MoreFeatured(),));},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MoreFeatured(),
+                          ));
+                    },
                     child: const Text(
                       "More",
                       style: TextStyle(
@@ -254,8 +285,7 @@ class _RecomendedPlantsState extends State<RecomendedPlants> {
                               style: const TextStyle(
                                   color: Color(0Xff0c9869),
                                   fontSize: 16,
-                                fontWeight: FontWeight.w600
-                              )))
+                                  fontWeight: FontWeight.w600)))
                     ]),
                   ),
                 ),
@@ -270,8 +300,8 @@ class _RecomendedPlantsState extends State<RecomendedPlants> {
         .pushNamed("NewDetailsScreen", arguments: customVariable);
   }
 }
-class FeaturedPlants extends StatefulWidget {
 
+class FeaturedPlants extends StatefulWidget {
   @override
   State<FeaturedPlants> createState() => _FeaturedPlantsState();
 }
@@ -279,7 +309,7 @@ class FeaturedPlants extends StatefulWidget {
 class _FeaturedPlantsState extends State<FeaturedPlants> {
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
+    return SizedBox(
       height: 280,
       width: 570,
       child: ListView(
@@ -287,7 +317,7 @@ class _FeaturedPlantsState extends State<FeaturedPlants> {
           physics: const ScrollPhysics(),
           scrollDirection: Axis.horizontal,
           children: dummyfeaturedplantdetails.map(
-                (CustomVariable) {
+            (CustomVariable) {
               return GestureDetector(
                 onTap: () => gotonext(context, CustomVariable["plantimage"]),
                 child: Padding(
@@ -336,8 +366,7 @@ class _FeaturedPlantsState extends State<FeaturedPlants> {
                               style: const TextStyle(
                                   color: Color(0Xff0c9869),
                                   fontSize: 16,
-                                  fontWeight: FontWeight.w600
-                              )))
+                                  fontWeight: FontWeight.w600)))
                     ]),
                   ),
                 ),
@@ -347,6 +376,7 @@ class _FeaturedPlantsState extends State<FeaturedPlants> {
     );
   }
 }
+
 void gotonext(BuildContext context, customVariable) {
   Navigator.of(context)
       .pushNamed("NewFeaturedDetailsScreen", arguments: customVariable);

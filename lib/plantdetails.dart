@@ -11,7 +11,7 @@ List<Map<String, dynamic>> dummyplantdetails = [
   {
     "plantimage": "assets/Images/Calathea orbifolia.jpg",
     "plantname": "CALATHEA",
-    "plantprice": "\$400",
+    "plantprice": "400",
     "place": "RUSSIA",
     "Rating": "1108 ratings",
     "Description":
@@ -20,7 +20,7 @@ List<Map<String, dynamic>> dummyplantdetails = [
   {
     "plantimage": "assets/Images/samantha plant.jpg",
     "plantname": "SAMANTHA",
-    "plantprice": "\$400",
+    "plantprice": "400",
     "place": "RUSSIA",
     "Rating": "970 ratings",
     "Description":
@@ -29,7 +29,7 @@ List<Map<String, dynamic>> dummyplantdetails = [
   {
     "plantimage": "assets/Images/cactus plant.jpg",
     "plantname": "CACTUS",
-    "plantprice": "\$540",
+    "plantprice": "540",
     "place": "RUSSIA",
     "Rating": "2586 ratings",
     "Description":
@@ -40,7 +40,7 @@ List<Map<String, dynamic>> dummyfeaturedplantdetails = [
   {
     "plantimage": "assets/Images/mother burle plant.jpg",
     "plantname": "BURLE MARX",
-    "plantprice": "\$400",
+    "plantprice": "400",
     "place": "RUSSIA",
     "Rating": "762 ratings",
     "Description":
@@ -49,7 +49,7 @@ List<Map<String, dynamic>> dummyfeaturedplantdetails = [
   {
     "plantimage": "assets/Images/green snake plant.jpg",
     "plantname": "GREENSNAKE",
-    "plantprice": "\$480",
+    "plantprice": "480",
     "place": "RUSSIA",
     "Rating": "1328 ratings",
     "Description":
@@ -67,7 +67,7 @@ List<Map<String, dynamic>> dummyfeaturedplantdetails = [
   {
     "plantimage": "assets/Images/AGLAONEMA PLANT.jpg",
     "plantname": "AGLAONEMA",
-    "plantprice": "\$400",
+    "plantprice": "400",
     "place": "RUSSIA",
     "Rating": "952 ratings",
     "Description":
@@ -88,7 +88,7 @@ List<Map<String, dynamic>> dummyMoreRecommendePlantdetails = [
   {
     "plantimage": "assets/Images/Calathea orbifolia.jpg",
     "plantname": "CALATHEA",
-    "plantprice": "\$400",
+    "plantprice": "400",
     "place": "RUSSIA",
     "Rating": "1108 ratings",
     "Description":
@@ -97,7 +97,7 @@ List<Map<String, dynamic>> dummyMoreRecommendePlantdetails = [
   {
     "plantimage": "assets/Images/samantha plant.jpg",
     "plantname": "SAMANTHA",
-    "plantprice": "\$400",
+    "plantprice": "400",
     "place": "RUSSIA",
     "Rating": "970 ratings",
     "Description":
@@ -106,7 +106,7 @@ List<Map<String, dynamic>> dummyMoreRecommendePlantdetails = [
   {
     "plantimage": "assets/Images/cactus plant.jpg",
     "plantname": "CACTUS",
-    "plantprice": "\$540",
+    "plantprice": "540",
     "place": "RUSSIA",
     "Rating": "2586 ratings",
     "Description":
@@ -115,7 +115,7 @@ List<Map<String, dynamic>> dummyMoreRecommendePlantdetails = [
   {
     "plantimage": "assets/Images/Philodendron.jpg",
     "plantname": "PHILONDRON",
-    "plantprice": "\$520",
+    "plantprice": "520",
     "place": "RUSSIA",
     "Rating": "2166 ratings",
     "Description":
@@ -124,7 +124,7 @@ List<Map<String, dynamic>> dummyMoreRecommendePlantdetails = [
   {
     "plantimage": "assets/Images/Rhaphidophora-Decursiva.jpg",
     "plantname": "DECURSIVA",
-    "plantprice": "\$420",
+    "plantprice": "420",
     "place": "RUSSIA",
     "Rating": "1256 ratings",
     "Description":
@@ -133,7 +133,7 @@ List<Map<String, dynamic>> dummyMoreRecommendePlantdetails = [
   {
     "plantimage": "assets/Images/pilea-peperomioides-12.jpg",
     "plantname": "PILEA",
-    "plantprice": "\$340",
+    "plantprice": "340",
     "place": "RUSSIA",
     "Rating": "825 ratings",
     "Description":
@@ -142,7 +142,7 @@ List<Map<String, dynamic>> dummyMoreRecommendePlantdetails = [
   {
     "plantimage": "assets/Images/palm plants.jpg",
     "plantname": "PALM PLANTS",
-    "plantprice": "\$520",
+    "plantprice": "520",
     "place": "RUSSIA",
     "Rating": "1736 ratings",
     "Description":
@@ -153,7 +153,7 @@ List<Map<String, dynamic>> dummyMorefeaturedplantdetails = [
   {
     "plantimage": "assets/Images/mother burle plant.jpg",
     "plantname": "BURLE MARX",
-    "plantprice": "\$400",
+    "plantprice": "400",
     "place": "RUSSIA",
     "Rating": "762 ratings",
     "Description":
@@ -162,7 +162,7 @@ List<Map<String, dynamic>> dummyMorefeaturedplantdetails = [
   {
     "plantimage": "assets/Images/green snake plant.jpg",
     "plantname": "GREENSNAKE",
-    "plantprice": "\$480",
+    "plantprice": "480",
     "place": "RUSSIA",
     "Rating": "1328 ratings",
     "Description":
@@ -171,7 +171,7 @@ List<Map<String, dynamic>> dummyMorefeaturedplantdetails = [
   {
     "plantimage": "assets/Images/Philodendron-Tortum.png",
     "plantname": "TORTUM",
-    "plantprice": "\$400",
+    "plantprice": "400",
     "place": "RUSSIA",
     "Rating": "320 ratings",
     "Description":
@@ -180,7 +180,7 @@ List<Map<String, dynamic>> dummyMorefeaturedplantdetails = [
   {
     "plantimage": "assets/Images/AGLAONEMA PLANT.jpg",
     "plantname": "AGLAONEMA",
-    "plantprice": "\$400",
+    "plantprice": "400",
     "place": "RUSSIA",
     "Rating": "952 ratings",
     "Description":
@@ -189,7 +189,7 @@ List<Map<String, dynamic>> dummyMorefeaturedplantdetails = [
   {
     "plantimage": "assets/Images/echeveria plant.jpg",
     "plantname": "ECHEVERIA",
-    "plantprice": "\$500",
+    "plantprice": "500",
     "place": "RUSSIA",
     "Rating": "1645 ratings",
     "Description":
@@ -198,7 +198,7 @@ List<Map<String, dynamic>> dummyMorefeaturedplantdetails = [
   {
     "plantimage": "assets/Images/SPIDER PLANT.jpg",
     "plantname": "SPIDER",
-    "plantprice": "\$420",
+    "plantprice": "420",
     "place": "RUSSIA",
     "Rating": "2045 ratings",
     "Description":
@@ -207,7 +207,7 @@ List<Map<String, dynamic>> dummyMorefeaturedplantdetails = [
   {
     "plantimage": "assets/Images/HEART LEAF.jpg",
     "plantname": "HEARTLEAF",
-    "plantprice": "\$380",
+    "plantprice": "380",
     "place": "RUSSIA",
     "Rating": "1037 ratings",
     "Description":
@@ -216,7 +216,7 @@ List<Map<String, dynamic>> dummyMorefeaturedplantdetails = [
   {
     "plantimage": "assets/Images/zz Plant.webp",
     "plantname": "ZZ PLANT",
-    "plantprice": "\$460",
+    "plantprice": "460",
     "place": "RUSSIA",
     "Rating": "428 ratings",
     "Description":

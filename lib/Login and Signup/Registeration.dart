@@ -14,7 +14,6 @@ class _RegistrationState extends State<Registration> {
   final password_controller = TextEditingController();
   late SharedPreferences logindata;
 
-
   @override
   void dispose() {
     // Clean up the controller when the widget is disposed.

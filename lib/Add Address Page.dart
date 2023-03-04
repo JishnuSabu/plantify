@@ -19,6 +19,7 @@ class _AddAddressState extends State<AddAddress> {
   final flatno_controller = TextEditingController();
   late SharedPreferences Addressdata;
   bool alreadysaveaddress = true;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -31,10 +32,11 @@ class _AddAddressState extends State<AddAddress> {
     alreadysaveaddress = (Addressdata.getBool('alreadysaveaddress') ?? false);
     print(alreadysaveaddress);
     if (alreadysaveaddress == true) {
-      Navigator.pushReplacement(context,
-          new MaterialPageRoute(builder: (context) => Booking()));
+      Navigator.pushReplacement(
+          context, new MaterialPageRoute(builder: (context) => Booking()));
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -212,7 +214,7 @@ class _AddAddressState extends State<AddAddress> {
                   color: Colors.white, borderRadius: BorderRadius.circular(6)),
               height: 50,
               width: double.infinity,
-              child:  Padding(
+              child: Padding(
                 padding: const EdgeInsets.only(left: 14.0),
                 child: TextField(
                   controller: area_controller,
@@ -231,7 +233,7 @@ class _AddAddressState extends State<AddAddress> {
                   color: Colors.white, borderRadius: BorderRadius.circular(6)),
               height: 50,
               width: double.infinity,
-              child:  Padding(
+              child: Padding(
                 padding: const EdgeInsets.only(left: 14.0),
                 child: TextField(
                   controller: flatno_controller,
@@ -249,9 +251,8 @@ class _AddAddressState extends State<AddAddress> {
                     borderRadius: BorderRadius.circular(16)),
                 primary: Colors.black,
               ),
-              onPressed: ()  {
+              onPressed: () {
                 saveAddress();
-
               },
               child: const Padding(
                   padding: EdgeInsets.only(
@@ -279,7 +280,8 @@ class _AddAddressState extends State<AddAddress> {
         phno.length >= 10 &&
         pincode != '' &&
         city != '' &&
-        district != '' && state != '') {
+        district != '' &&
+        state != '') {
       print('Successfull');
       Addressdata.setBool('alreadysaveaddress', false);
       Addressdata.setString('Name', name);
@@ -290,5 +292,19 @@ class _AddAddressState extends State<AddAddress> {
       Addressdata.setString('State', state);
       Navigator.of(context)
           .pushNamed("NewBookingPage", arguments: dummyplantdetails);
-  }}
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.red[400],
+          content: const Align(
+            alignment: Alignment.center,
+            child: Text(
+              "Enter Valid details",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+          )));
+    }
+  }
 }

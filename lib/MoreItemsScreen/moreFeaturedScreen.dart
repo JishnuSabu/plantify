@@ -3,8 +3,6 @@ import 'package:plantify/Screens/HomeScreen.dart';
 import 'package:plantify/plantdetails.dart';
 
 class MoreFeatured extends StatefulWidget {
-
-
   @override
   State<MoreFeatured> createState() => _MoreFeaturedState();
 }
@@ -12,7 +10,7 @@ class MoreFeatured extends StatefulWidget {
 class _MoreFeaturedState extends State<MoreFeatured> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
         appBar: AppBar(
             backgroundColor: const Color(0Xff0c9869),
             leading: GestureDetector(
@@ -38,17 +36,18 @@ class _MoreFeaturedState extends State<MoreFeatured> {
                 child: GridView(
                     shrinkWrap: true,
                     physics: ScrollPhysics(),
-                    gridDelegate:
-                    SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisExtent: 260),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2, mainAxisExtent: 260),
                     children: dummyMorefeaturedplantdetails.map(
-                          (CustomVariable) {
+                      (CustomVariable) {
                         return GestureDetector(
-                          onTap: () => gotonextt(context, CustomVariable["plantimage"]),
+                          onTap: () =>
+                              gotonextt(context, CustomVariable["plantimage"]),
                           child: Padding(
                             padding: const EdgeInsets.only(left: 15.0, top: 20),
                             child: Card(
                               shadowColor: const Color(0Xff0c9869),
-                              elevation:6,
+                              elevation: 6,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10)),
                               // height: 500,
@@ -74,7 +73,8 @@ class _MoreFeaturedState extends State<MoreFeatured> {
                                     child: Text(
                                       "${CustomVariable["plantname"]}",
                                       style: const TextStyle(
-                                          fontSize: 20, fontWeight: FontWeight.bold),
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold),
                                     )),
                                 Positioned(
                                     right: 12,
@@ -103,11 +103,11 @@ class _MoreFeaturedState extends State<MoreFeatured> {
               ),
             ],
           ),
-        )
-    );
+        ));
   }
 }
+
 void gotonextt(BuildContext context, customVariable) {
   Navigator.of(context)
-      .pushNamed("NewDetailsScreen", arguments: customVariable);
+      .pushNamed("NewFeaturedDetailsScreen", arguments: customVariable);
 }

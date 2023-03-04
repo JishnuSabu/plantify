@@ -8,7 +8,9 @@ class SuccessfulOrder extends StatelessWidget {
         child: Container(
           height: 100,
           width: 300,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),border: Border.all(color: Colors.green,width: 2)),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: Colors.green, width: 2)),
           child: const Center(
             child: Text(
               "Congratulations! \nSuccessfully placed your order",

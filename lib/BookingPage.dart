@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:plantify/Add%20Address%20Page.dart';
 import 'package:plantify/Screens/DetailsScreen.dart';
 import 'package:plantify/Screens/HomeScreen.dart';
 import 'package:plantify/SuccessfulOrderPage.dart';
 import 'package:plantify/main.dart';
 import 'package:plantify/plantdetails.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Booking extends StatefulWidget {
@@ -13,6 +15,16 @@ class Booking extends StatefulWidget {
 }
 
 class _BookingState extends State<Booking> {
+  Razorpay? _razorpay;
+  void _handlepaymentsuccess(PaymentSuccessResponse response){
+    Fluttertoast.showToast(msg: "SUCCESS PAYMENT:${response.paymentId}",timeInSecForIosWeb: 4);
+  }
+  void _handlepaymentError(PaymentFailureResponse response){
+    Fluttertoast.showToast(msg: " PAYMENT FAILED:${response.code} - ${response.message}",timeInSecForIosWeb: 4);
+  }
+  void _handlepaymentWallet(ExternalWalletResponse response){
+    Fluttertoast.showToast(msg: "EXTERNAL_WALLET IS :${response.walletName}",timeInSecForIosWeb: 4);
+  }
   late SharedPreferences Addressdata;
   String? Name;
   String? phno;
@@ -26,6 +38,24 @@ class _BookingState extends State<Booking> {
     // TODO: implement initState
     super.initState();
     initial();
+    _razorpay = Razorpay();
+    _razorpay?.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlepaymentsuccess);
+    _razorpay?.on(Razorpay.EVENT_PAYMENT_ERROR, _handlepaymentError);
+    _razorpay?.on(Razorpay.EVENT_EXTERNAL_WALLET, _handlepaymentWallet);
+  }
+  void makePayment()async{
+    var options = {
+      "key":"rzp_test_WQm6e8lvoqEBlo",
+      "amount":38000,
+      "name" :"Jishnu",
+      "prefill":{"contact":"9383838377","email":"jishnu12345sabu@gamil.com"}
+
+    };
+    try{
+      _razorpay?.open(options);
+    }catch(e){
+      debugPrint(e.toString());
+    }
   }
 
   void initial() async {
@@ -186,27 +216,27 @@ class _BookingState extends State<Booking> {
             ),
             const DividerCustom(),
             Padding(
-              padding: EdgeInsets.only(top: 6.0),
+              padding: const EdgeInsets.only(top: 6.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(
+                  const Text(
                     "Amount Payable",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 170,
                   ),
                   Text(
                     "${plants["plantprice"]}",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                   // dummyplantdetails.map((ex)=>Text("${ex["plantprice"]}")).toList()
                   SizedBox(
                     height: 30,
                     width: 50,
                     child: ListView(
-                        padding: EdgeInsets.all(14),
+                        padding: const EdgeInsets.all(14),
                         children: dummyplantdetails.map((ex) {
                           return Text("${ex["plantprice"]}");
                         }).toList()),
@@ -282,11 +312,38 @@ class _BookingState extends State<Booking> {
               ],
             ),
             const DividerCustom(),
-            const Padding(
-              padding: EdgeInsets.only(right: 270.0, top: 6),
-              child: Text(
-                "Cash on delivery!",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  const Text(
+                    "Cash on delivery!",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+                  ),
+                  const SizedBox(width: 80),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4)),
+                        primary: const Color(0Xff0c9869),
+                      ),
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SuccessfulOrder(),
+                            ));
+                      },
+                      child: const Padding(
+                        padding: EdgeInsets.only(
+                            left: 17.0, right: 17, top: 8, bottom: 8),
+                        child: Text(
+                          "Place Order",
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                      )),
+                ],
               ),
             ),
             const DividerCustom(),
@@ -300,17 +357,13 @@ class _BookingState extends State<Booking> {
                   primary: const Color(0Xff0c9869),
                 ),
                 onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SuccessfulOrder(),
-                      ));
+                  makePayment();
                 },
                 child: const Padding(
                   padding: EdgeInsets.only(
                       left: 30.0, right: 30, top: 14, bottom: 14),
                   child: Text(
-                    "Place Order",
+                    "Online Payment",
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                 )),
