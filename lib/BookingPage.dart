@@ -339,7 +339,7 @@ class _BookingState extends State<Booking> {
                         padding: EdgeInsets.only(
                             left: 17.0, right: 17, top: 8, bottom: 8),
                         child: Text(
-                          "Place Order",
+                          "Click here!",
                           style: TextStyle(fontSize: 18, color: Colors.white),
                         ),
                       )),
@@ -347,23 +347,52 @@ class _BookingState extends State<Booking> {
               ),
             ),
             const DividerCustom(),
-            const SizedBox(
-              height: 20,
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  const Text(
+                    "Online Payment!",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+                  ),
+                  const SizedBox(width: 80),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4)),
+                        primary: const Color(0Xff0c9869),
+                      ),
+                      onPressed: () {
+                        makePayment();
+                      },
+                      child: const Padding(
+                        padding: EdgeInsets.only(
+                            left: 17.0, right: 17, top: 8, bottom: 8),
+                        child: Text(
+                          "Click here!",
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                      )),
+                ],
+              ),
             ),
+            const DividerCustom(),
+            SizedBox(height: 14,),
             ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4)),
-                  primary: const Color(0Xff0c9869),
+                  primary: Colors.black,
                 ),
                 onPressed: () {
-                  makePayment();
+               Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreens(),));
                 },
                 child: const Padding(
                   padding: EdgeInsets.only(
-                      left: 30.0, right: 30, top: 14, bottom: 14),
+                      left: 17.0, right: 17, top: 8, bottom: 8),
                   child: Text(
-                    "Online Payment",
+                    "Cancel 0rder",
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                 )),

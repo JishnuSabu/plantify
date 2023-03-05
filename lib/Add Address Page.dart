@@ -283,7 +283,7 @@ class _AddAddressState extends State<AddAddress> {
         district != '' &&
         state != '') {
       print('Successfull');
-      Addressdata.setBool('alreadysaveaddress', false);
+      Addressdata.setBool('alreadysaveaddress', true);
       Addressdata.setString('Name', name);
       Addressdata.setString('Phone Number', phno);
       Addressdata.setString('pincode', pincode);
