@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:plantify/BookingPage.dart';
+import 'package:plantify/Screens/BookingPage.dart';
 import 'package:plantify/Login%20and%20Signup/Registeration.dart';
 import 'package:plantify/MoreItemsScreen/moreRecommendedScreen.dart';
 import 'package:plantify/Screens/DetailsScreen.dart';

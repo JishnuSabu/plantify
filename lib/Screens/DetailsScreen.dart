@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:plantify/Add%20Address%20Page.dart';
-import 'package:plantify/BookingPage.dart';
+import 'package:plantify/Screens/BookingPage.dart';
 import 'package:plantify/Ouantity%20selection.dart';
 import 'package:plantify/Screens/HomeScreen.dart';
 import 'package:plantify/plantdetails.dart';
